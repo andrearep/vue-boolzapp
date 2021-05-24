@@ -3,10 +3,28 @@
     padding: 0;
     margin: 0;
 }
-
+.bg_grey{
+    height: 85vh;
+    position: absolute;
+    top:15vh;
+    width: 100%;
+    background-color: #009688;
+    z-index: -1;
+    background: linear-gradient(180deg, #DDDBD1 0%, #D2DBDC 100%);
+}
 .container{
     width: 80%;
     margin: auto;
+    
+ 
+}
+.bg_green{
+    height: 15vh;
+    position: absolute;
+    top:0;
+    width: 100%;
+    background-color: #009688;
+    z-index: -1;
 }
 .box{
     display: flex;
@@ -16,7 +34,9 @@
 .utenti{
     width: 40%;
     height: 90vh;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+   
 }
 
 .you{
@@ -24,6 +44,7 @@
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
+    border-right: 1px solid rgb(213, 213, 213);
     
 }
 .you>img{
@@ -73,8 +94,7 @@
     background-color:#FAFAFA ;
     padding: 1rem;
 }
-.search{
-    
+.search{ 
     background-color: white;
     padding: 1rem;
     border: 1px solid rgb(232, 232, 232);
@@ -95,6 +115,7 @@
 }
 
 .contatto{
+    background-color: white;
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center; 
@@ -112,8 +133,9 @@
     flex-grow: 4;
 } 
 
-
 .conversazione{
+    display: flex;
+    flex-direction: column;
     width: 60%;
     height: 90vh;
     position: relative;
@@ -128,6 +150,7 @@
 .utente_conversazione>img{
     border-radius: 100%;
     height: 10vh;
+    flex: 0 1 auto;
     margin-right:20px ;
 }
 .contact{
@@ -145,7 +168,7 @@
 }
 .conversazione_attiva{
     background-image: url(../img/mine.jpg);
-    height: 80%; 
+    flex: 1 1 auto; 
        width: 100%;
 }
 
@@ -154,6 +177,7 @@
     position: absolute;
     bottom: 0;
     display: flex;
+    flex: 0 1 auto;
     justify-content: space-around;
     align-items: center;
     background-color:#F3EEEA ;
