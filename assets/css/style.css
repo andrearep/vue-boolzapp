@@ -3,6 +3,8 @@
     padding: 0;
     margin: 0;
 }
+
+
 .bg_grey{
     height: 85vh;
     position: absolute;
@@ -64,7 +66,7 @@
 }
 
 .notifiche{
-    height: 10vh;
+    
     display: flex;
     align-items: center;
     background-color:#8EDAFC ;
@@ -169,7 +171,10 @@
 .conversazione_attiva{
     background-image: url(../img/mine.jpg);
     flex: 1 1 auto; 
-       width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction:column ;
+    padding: 1rem 3rem
 }
 
 .write_message{
@@ -196,4 +201,32 @@
     color: #6B7376;
     font-size: 2rem;
     
+}
+
+.sent, .receveid{
+    max-width: 40%;
+    min-width: 30%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    display: block;
+    
+
+}
+.sent{
+    background-color: #D5F9BA;
+    align-self: flex-end;
+    
+}
+.receveid{
+    background-color: white;
+    
+}
+.msg{
+    display: block;
+
+}
+.orario_msg{
+    float: right;
+    color: #BDB9BB;
 }
