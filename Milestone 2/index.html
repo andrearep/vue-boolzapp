@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="bg_green"></div>
+    <div class="bg_grey"></div>
+    <div id="root">
+        <div class="container">
+            <div class="box">
+                <div class="utenti">
+                    <!-- your profile -->
+                    <div class="you">
+                        <img src="./assets/img/avatar_io.jpg" alt="">
+                        <span class="your_name">Andrea Repetto</span>
+                        <div class="icons">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <!-- attivare noptifiche whatsapp web -->
+                    <div class="notifiche">
+                        <i class="fas fa-bell-slash"></i>
+                        <div>
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+
+                    <!-- ricerca contatti -->
+                    <div class="search_box">
+                        <div class="search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <!-- contatti -->
+                    <div class="contatti">
+                        <div class="contatto" v-for="(contact, index) in contacts" :class="active===index ? 'active'
+                            : '' " @click=" selectConversation(index)">
+                            <img :src="contact.avatar" alt="">
+                            <span>{{contact.name}}</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversazione">
+                    <div class="utente_conversazione">
+                        <img :src="contacts[active].avatar" alt="">
+                        <div class="contact">
+                            <span class="nome_contatto">{{contacts[active].name}}</span>
+                            <span class="ultimo_accesso">Ultimo accesso oggi alle ...</span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+
+                    <div class="conversazione_attiva">
+                        <div v-for="(message, index) in contacts[active].messages" :class="message.status">
+                            <span class="msg">{{message.text}}</span>
+                            <span class="orario_msg">{{message.date}}</span>
+                        </div>
+                    </div>
+
+                    <div class="write_message">
+                        <i class="fas fa-smile"></i>
+                        <input type="text" placeholder="Scrivi un messagio">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+
+                    v-for"(message, index) in contacts[active].messages"
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- VUE CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
