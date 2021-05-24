@@ -1,3 +1,15 @@
+function dayTime() {
+    let date = new Date()
+    var seconds = date.getSeconds()
+    var minute = date.getMinutes()
+    var hour = date.getHours()
+    var day = date.getDate()
+    var month = date.getMonth()
+    var year = date.getFullYear()
+
+    return ` ${day}/${month}/${year} ${hour}:${minute}:${seconds}`
+}
+
 
 const app = new Vue({
 
@@ -146,12 +158,43 @@ const app = new Vue({
             },
         ],
         active: 0,
-        send_msg: ""
+        send_msg: "",
+
     },
 
     methods: {
         selectConversation: function selectConversation(index) {
             return this.active = index;
+        },
+
+        sendMessage: function sendMessage() {
+            if (this.send_msg != "") {
+                const msg = {
+                    date: dayTime(),
+                    text: this.send_msg,
+                    status: 'sent'
+                }
+                this.send_msg = "";
+                const messaggi = this.contacts[this.active].messages
+                messaggi.push(msg)
+
+                setTimeout(function () {
+                    const msg_receveid = {
+                        date: dayTime(),
+                        text: "ok",
+                        status: 'receveid'
+                    }
+                    messaggi.push(msg_receveid);
+                }, 1000);
+            }
         }
+
+    },
+    mounted() {
+        document.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                this.sendMessage()
+            }
+        })
     }
 })

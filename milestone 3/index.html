@@ -84,7 +84,7 @@
                     <div class="write_message">
                         <i class="fas fa-smile"></i>
                         <input v-model="send_msg" type="text" placeholder="Scrivi un messagio">
-                        <i class="fas fa-microphone"></i>
+                        <i @click="sendMessage()" class="fas fa-microphone"></i>
                     </div>
 
 
