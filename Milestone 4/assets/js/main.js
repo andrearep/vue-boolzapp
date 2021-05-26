@@ -159,8 +159,7 @@ const app = new Vue({
         ],
         active: 0,
         send_msg: "",
-
-
+        researchContact: ""
     },
 
     methods: {
@@ -189,7 +188,6 @@ const app = new Vue({
                 }, 1000);
             }
         }
-
     },
     mounted() {
         document.addEventListener('keyup', (e) => {
@@ -198,4 +196,5 @@ const app = new Vue({
             }
         })
     }
+
 })
